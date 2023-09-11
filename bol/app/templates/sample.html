@@ -3,27 +3,32 @@
 <html class="enhanced js is-desktop no-touch" lang="nl-NL">
 <head>
 
-
-
-    <script type="module">
+<script type="module">
         import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
+        const stimulusId = new URLSearchParams(window.location.search).get('stimulusId')
+        const reSdk = new EmbeddedPageSdk(true, stimulusId, true)
 
-        /**
-         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
-         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
-         */
         window.addEventListener("DOMContentLoaded", () => {
-           const debugMode = false;
-           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
-           const forceRun = false;
-
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+            document.getElementById('button-finish-test').addEventListener("click", () => reSdk.finishEyeTrackingTest())
+            document.getElementById('button-next-exposure').addEventListener("click", () => reSdk.startNextExposure())
+            const options = {
+                rootMargin: '0px',
+                threshold: 1.0
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0) {
+                        reSdk.startNextExposure()
+                        observer.unobserve(document.getElementById('sticky-video'))
+                    }
+                });
+            }, options);
+            observer.observe(document.getElementById('sticky-video'))
         })
+
     </script>
-        <script>
-    document.getElementById('button-finish-test').addEventListener("click", () => reSdk.finishEyeTrackingTest())
-</script>
+
+
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27033,6 +27038,7 @@
 
 
                         <button id="button-finish-test" type="button" class="btn btn-outline-secondary btn-lg px-4">Finish test</button>
+                        <button id="button-next-exposure" type="button" class="btn btn-outline-secondary btn-lg px-4">button-next-exposure</button>
 
                     </wsp-modal-opener>
                 </div>
