@@ -2,6 +2,30 @@
 <!-- saved from url=(0055)https://www.bol.com/nl/nl/s/?searchtext=black+headphone -->
 <html class="enhanced js is-desktop no-touch" lang="nl-NL">
 <head>
+
+
+
+    <script type="module">
+        import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
+
+        /**
+         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
+         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
+         */
+        window.addEventListener("DOMContentLoaded", () => {
+           const debugMode = false;
+           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
+           const forceRun = false;
+
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+        })
+    </script>
+        <script>
+    document.getElementById('button-finish-test').addEventListener("click", () => reSdk.finishEyeTrackingTest())
+</script>
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27006,16 +27030,9 @@
                 </div>
                 <div class="email-opt-in-personalized-banner__button u-1/1@screen-small-only" data-test="bannerButton">
                     <wsp-modal-opener data-async-url="/nl/rnwy/emailOptIn/modalView/">
-                        <button class="ui-btn  ui-btn--primary ui-btn--block@screen-small js_email_opt_in_opener"
-                                open-modal="true">
 
-                            <svg version="1.1" viewBox="0 0 14 14" aria-hidden="true"
-                                 class="svg-inline--bi bi-mail bi-lg" data-test="icon-mail" focusable="false">
-                                <path fill-rule="evenodd"
-                                      d="M2.992 4H2v6h10V4h-.966L7.37 7.662a.502.502 0 01-.709.002l-.252-.25a.486.486 0 01-.037-.033L2.993 4zm1.414 0l2.607 2.606L9.619 4H4.406zM1.063 3H13v8H1.062V3z"></path>
-                            </svg>
-                            Ja, graag
-                        </button>
+
+                        <button id="button-finish-test" type="button" class="btn btn-outline-secondary btn-lg px-4">Finish test</button>
 
                     </wsp-modal-opener>
                 </div>
@@ -27862,22 +27879,7 @@ if ('BUI'.length > 0
     </template>
 </grammarly-desktop-integration>
 
-    <script type="module">
-        import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
 
-        /**
-         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
-         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
-         */
-        window.addEventListener("DOMContentLoaded", () => {
-           const debugMode = false;
-           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
-           const forceRun = false;
-
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
-        })
-    </script>
 </html>
 
 
