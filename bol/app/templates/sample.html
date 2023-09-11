@@ -126,22 +126,7 @@
     </script>
 
 
-    <script type="module">
-        import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
 
-        /**
-         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
-         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
-         */
-        window.addEventListener("DOMContentLoaded", () => {
-           const debugMode = false;
-           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
-           const forceRun = false;
-
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
-           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
-        })
-    </script>
 
     <script data-manifest="" data-canary="">!function () {
         "use strict";
@@ -27876,4 +27861,24 @@ if ('BUI'.length > 0
              data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div>
     </template>
 </grammarly-desktop-integration>
+
+    <script type="module">
+        import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
+
+        /**
+         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
+         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
+         */
+        window.addEventListener("DOMContentLoaded", () => {
+           const debugMode = false;
+           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
+           const forceRun = false;
+
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+        })
+    </script>
 </html>
+
+
+
