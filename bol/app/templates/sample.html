@@ -126,6 +126,23 @@
     </script>
 
 
+    <script type="module">
+        import EmbeddedPageSdk from "https://www.realeye.io/sdk/js/testRunnerEmbeddableSdk-1.2.1.js"
+
+        /**
+         * NOTICE: The SDK MUST be created when the UI is fully loaded and ready.
+         * So, if you are using (modern) frontend framework please use its proper event to create the SDK when everything is ready and fully rendered, instead of the vanilla JS "DOMContentLoaded" event.
+         */
+        window.addEventListener("DOMContentLoaded", () => {
+           const debugMode = false;
+           const stimulusId = null; // Or Stimulus/Item UUID from RealEye Study, e.g. "61560b76-3d31-4f0e-b530-55bd8709aadb"
+           const forceRun = false;
+
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+           const reSdk = new EmbeddedPageSdk(debugMode, stimulusId, forceRun)
+        })
+    </script>
+
     <script data-manifest="" data-canary="">!function () {
         "use strict";
         var H, e, S, a, f, d, c, b = {}, A = {};
@@ -1423,7 +1440,7 @@
 
 
 <body data-bltgc="vgP3rkpZhG9K46QRPWlOkQ" data-container-name="SEARCH.Search" data-backend="future"
-      data-new-gr-c-s-check-loaded="14.1121.0" data-gr-ext-installed="">
+      data-new-gr-c-s-check-loaded="14.1121.0" data-gr-ext-installed="" data-re-aoi-name="body">
 
 <img class="srt" src="/static/sample_files/receive(1)" height="1" width="1" alt="">
 
@@ -1472,7 +1489,7 @@
     </svg>
 
 
-    <div class="usp-banner" role="complementary" aria-label="Onze voordelen">
+    <div class="usp-banner" role="complementary" aria-label="Onze voordelen" data-re-aoi-name="up_banner">
         <div class="usp-banner__constrain">
             <a href="https://www.bol.com/nl/nl/m/lekker-winkelen-zonder-zorgen/"
                class="usp-banner__usps  px_common_promotion_click">
@@ -1513,7 +1530,7 @@
     </div>
 
 
-    <header id="header" class="wsp-header js_main_header" data-bltgg="vgP3rkpZhG9K46QRPWlOkQ.0">
+    <header id="header" class="wsp-header js_main_header" data-bltgg="vgP3rkpZhG9K46QRPWlOkQ.0" data-re-aoi-name="header">
         <div class="wsp-header-sections  js_search_suggestion_header_pos">
             <div class="wsp-header-sections__logo">
                 <button class="main-menu-btn  js_main_menu_btn" aria-expanded="false" aria-label="Menu">
@@ -1533,7 +1550,7 @@
 
             </div>
 
-            <div class="wsp-header-sections__search" data-test="search-bar-container">
+            <div class="wsp-header-sections__search" data-test="search-bar-container" data-re-aoi-name="searchbar">
                 <wsp-search-box class="wsp-search-form"
                                 suggestions-endpoint="https://suggestions.bol.com/v3/suggestions/"
                                 bucketing-id="1emw76ewvvv9qupq8qbowk014rvdu570"
@@ -1547,7 +1564,7 @@
                         <wsp-search-box-register>
                             <wsp-search-input class="wsp-search-form__input">
                                 <label for="searchfor" class="srt">Zoeken</label>
-                                <input id="searchfor" name="searchtext" type="text" value="black headphone"
+                                <input id="searchfor" name="searchtext" type="text" value="backpack"
                                        maxlength="75" autocorrect="off" spellcheck="false" autocomplete="off"
                                        autocapitalize="off" placeholder="Waar ben je naar op zoek?"
                                        class="wsp-search__input js-search-input" data-test="search_input_trigger">
@@ -1581,7 +1598,7 @@
                 </wsp-search-box>
             </div>
 
-            <div class="wsp-header-sections__account">
+            <div class="wsp-header-sections__account" data-re-aoi-name="account">
 
                 <div class="o-drop-down account-dropdown  account-dropdown--canvas ">
                     <input type="checkbox" id="account-dropdown" class="o-drop-down__trigger" autocomplete="off"
@@ -26636,7 +26653,7 @@
                                                         data-bltgi="vgP3rkpZhG9K46QRPWlOkQ.2_6.7">
 
                                                         <div class="product-item__image hit-area "
-                                                             data-test="product-image">
+                                                             data-test="product-image" data-re-aoi-name="item_img_{{item.itemRank}}">
                                                             <div class="h-o-hidden">
                                                                 <wsp-analytics-tracking-event
                                                                         data-target=".list_page_product_tracking_target"
@@ -26737,7 +26754,7 @@
 
                                                         </div>
 
-                                                        <div class="product-item__content" data-test="product-content">
+                                                        <div class="product-item__content" data-test="product-content" data-re-aoi-name="item_content_{{item.itemRank}}">
                                                             <div class="product-item__info hit-area">
 
                                                                 <wsp-sponsored-product-label class="h-block"
@@ -26756,7 +26773,7 @@
 
                                                                 </ul>
 
-                                                                <div class="product-title--inline">
+                                                                <div class="product-title--inline" data-re-aoi-name="item_title_{{item.itemRank}}">
                                                                     <wsp-analytics-tracking-event
                                                                             data-target=".list_page_product_tracking_target"
                                                                             data-trigger="click"
@@ -26773,54 +26790,8 @@
                                                                 </div>
 
 
-                                                                {#      #}
-                                                                {#        <ul class="product-small-specs" data-test="product-specs">#}
-                                                                {#  #}
-                                                                {#    <li>#}
-                                                                {#      #}
-                                                                {#        <span>On-ear</span>#}
-                                                                {#      #}
-                                                                {##}
-                                                                {#      #}
-                                                                {#    </li>#}
-                                                                {#  #}
-                                                                {#    <li>#}
-                                                                {#      #}
-                                                                {#        <span>Draadloos</span>#}
-                                                                {#      #}
-                                                                {##}
-                                                                {#      #}
-                                                                {#    </li>#}
-                                                                {#  #}
-                                                                {#    <li>#}
-                                                                {#      #}
-                                                                {#        <span>Met microfoon</span>#}
-                                                                {#      #}
-                                                                {##}
-                                                                {#      #}
-                                                                {#    </li>#}
-                                                                {#  #}
-                                                                {#    <li>#}
-                                                                {#      #}
-                                                                {#        <span>Batterijduur: 0 uur</span>#}
-                                                                {#      #}
-                                                                {##}
-                                                                {#      #}
-                                                                {#    </li>#}
-                                                                {#  #}
-                                                                {#    <li>#}
-                                                                {#      #}
-                                                                {#        <span>Geschikt voor: Dagelijks gebruik</span>#}
-                                                                {#      #}
-                                                                {##}
-                                                                {#      #}
-                                                                {#    </li>#}
-                                                                {#  #}
-                                                                {#</ul>#}
-                                                                {#      #}
 
-
-                                                                <div>
+                                                                <div data-re-aoi-name="item_rate_{{item.itemRank}}">
                                                                     <div class="u-mb--xs"
                                                                          aria-label="4,0 van de 5 sterren uit 3">
                                                                         <div class="star-rating"
@@ -26835,7 +26806,7 @@
 
 
                                                                 <p class="medium--is-visible"
-                                                                   data-test="product-description">
+                                                                   data-test="product-description" data-re-aoi-name="item_description_{{item.itemRank}}">
                                                                     {{ item.productDescription }}
                                                                     <wsp-analytics-tracking-event
                                                                             data-target=".list_page_product_tracking_target"
@@ -26867,7 +26838,7 @@
                                                                            data-test="product-options">
 
 
-                                                                <div class="product-prices">
+                                                                <div class="product-prices" data-re-aoi-name="item_price_{{item.itemRank}}">
 
                                                                     <section class="price-block
 
@@ -26893,86 +26864,6 @@
 
 
                                                                 </div>
-
-
-{#                                                                <p class="product-prices small_details"#}
-{#                                                                   data-test="discount-amount">#}
-{##}
-{#                                                                    Of bespaar 10% als je er 2 koopt#}
-{##}
-{#                                                                </p>#}
-
-
-{#                                                                <div class="product-delivery"#}
-{#                                                                     data-test="delivery-notification">#}
-{##}
-{#                                                                    <div class="product-delivery-highlight"#}
-{#                                                                         data-test="product-delivery-highlight">Op#}
-{#                                                                        voorraad#}
-{#                                                                    </div>#}
-{##}
-{#                                                                    <br>#}
-{##}
-{##}
-{#                                                                    Voor 23:59 uur besteld, donderdag in huis#}
-{##}
-{##}
-{#                                                                    <wsp-tooltip data-test="tooltip">#}
-{#                <span class="is-hidden js_tooltip_content" data-test="delivery-notification-info">#}
-{#                    <p><strong>Levertijd</strong></p>#}
-{#<p>We doen er alles aan om dit artikel op tijd te bezorgen. Het is echter in een enkel geval mogelijk dat door omstandigheden de bezorging vertraagd is.</p>#}
-{#<p><strong>Bezorgopties</strong></p>#}
-{#<p>We bieden verschillende opties aan voor het bezorgen of ophalen van je bestelling. Welke opties voor jouw bestelling beschikbaar zijn, zie je bij het afronden van de bestelling.</p>#}
-{##}
-{#                </span>#}
-{#                                                                        <span class="medium--is-visible--inline-block"#}
-{#                                                                              data-ref="#delivery-tooltip-content-9200000101476492">#}
-{#                    <svg version="1.1" viewBox="0 0 14 14" aria-hidden="true"#}
-{#                         class="svg-inline--bi bi-badge-info-neg bi-lg" data-test="icon-badge-info-neg"#}
-{#                         focusable="false"><path fill-rule="evenodd"#}
-{#                                                 d="M7 14A7 7 0 117 0a7 7 0 010 14zm-.033-1a6 6 0 100-12 6 6 0 000 12zm-.464-6.984a.512.512 0 01.509-.516h-.024c.283 0 .514.228.515.516l.027 3.968a.512.512 0 01-.509.516h.024a.516.516 0 01-.515-.516l-.027-3.968zM7.031 4.5a.5.5 0 110-1 .5.5 0 010 1z"></path></svg>#}
-{#                </span>#}
-{#                                                                    </wsp-tooltip>#}
-{##}
-{#                                                                </div>#}
-
-{#                                                                <div class="product-seller#}
-{# medium--is-visible#}
-{# product-seller--with-disclaimer#}
-{#" data-test="plazaseller-link">#}
-{##}
-{##}
-{#                                                                    Verkoop door#}
-{##}
-{#                                                                    <wsp-popup-fragment>#}
-{##}
-{#                                                                        <a class="product-seller__link"#}
-{#                                                                           href="https://www.bol.com/nl/nl/v/marktsquare/1730649/?sellingOfferId=b2baccba29d4aaa27ce4ec43e749c79d"#}
-{#                                                                           data-js-href="/nl/rnwy/seller_popup/1730649?offerId=1001035960662120&amp;productId=9200000101476492&amp;l=nl"#}
-{#                                                                           tabindex="-1"#}
-{#                                                                           data-analytics-id="px_seller_link_click"#}
-{#                                                                           data-analytics-prop1="popup:listpage:sellerinfo">#}
-{#                                                                            <span class="product-seller__name">Marktsquare</span>#}
-{##}
-{#                                                                        </a>#}
-{#                                                                    </wsp-popup-fragment>#}
-{##}
-{##}
-{#                                                                    <div class="product-seller__disclaimer ">#}
-{##}
-{##}
-{#                                                                        <wsp-popup-fragment>#}
-{#                                                                            <a data-js-href="/nl/rnwy/seller_popup/1730649?offerId=1001035960662120&amp;productId=9200000101476492&amp;l=nl"#}
-{#                                                                               href="https://www.bol.com/nl/nl/v/marktsquare/1730649/?sellingOfferId=b2baccba29d4aaa27ce4ec43e749c79d"#}
-{#                                                                               data-analytics-id="px_common_popup"#}
-{#                                                                               data-analytics-value="">Wat je kan#}
-{#                                                                                verwachten</a>#}
-{#                                                                        </wsp-popup-fragment>#}
-{##}
-{#                                                                    </div>#}
-{##}
-{##}
-{#                                                                </div>#}
 
 
                                                                 <div class="medium--is-visible">
